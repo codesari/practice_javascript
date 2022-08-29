@@ -44,3 +44,49 @@ console.log(Array.isArray(first)); // false
 
 console.log(diziSayi instanceof Array); // true
 console.log(obje instanceof Array); // false
+
+console.log(typeof obje);
+
+// ! PUSH() and UNSHİFT()
+
+// ! push() diziye sondan ekleme yapar
+
+// diziye push yapacağımız için değişkeni let yapıyoruz
+let opSystems = ["ME", "XP"];
+console.log(opSystems.length);
+opSystems.push("VİSTA"); // return the new length
+console.log(opSystems);
+console.log(opSystems.length);
+
+// ! unshift() dizinin başından ekleme yapar
+
+opSystems.unshift("WİN 98");
+console.log(opSystems, opSystems.length);
+
+//! diziye manuel ekleme de yapılabilir (using index) fakat tavsiye edilmeyen bir yöntem
+
+// let arrayPage = ["Google", "Land"];
+// arrayPage[2] = "Page";
+// console.log(arrayPage);
+
+// ! eğer arada index atlarsan atladığın index undefined olur.bu yüzden bu yöntem tavsiye edilmez
+
+let arrayPage = ["Google", "Land"];
+arrayPage[3] = "Page";
+console.log(arrayPage);
+
+// ! pop() metodu dizideki son elemanı çıkarır ve çıkardığı elemanın değerini tutar
+
+const poppedElement = arrayPage.pop();
+console.log(poppedElement);
+console.log(arrayPage);
+
+// ! shift() metodu dizinin başındaki elemanı çıkarır ve çıkardığı elemanı tutar.
+
+const shiftedElements = arrayPage.shift();
+console.log(shiftedElements);
+console.log(arrayPage);
+
+// ? ************ ÖZET ****************
+// ?    push() - pop()     --> diziye sondan eleman ekleme ve çıkartma
+// ? unshift() - shift()   --> dizinin başından elemanan ekleme ve çıkarma
