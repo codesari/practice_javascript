@@ -13,7 +13,35 @@ console.log(new_ary2);
 
 //? join()
 // ! join (birleşme noktası)
+// ! join() metodu bir seperator kullanarak dizi elemanlarını bir string hale getirir.
 
 let arr = ["a", "b", "c", "d"];
 console.log(arr);
 console.log(arr.join(""));
+console.log(arr.join("-"));
+// ! dizide değişiklik yapmaz (not mutates)
+console.log(arr);
+
+// ? reverse()
+// ! reverse metodu işlem yaptığında diziyi olduğu yerde değiştirir (mutate)
+
+const courseList = ["Cyber", "AWS", "SalesForce", "FullStack"];
+console.log("Before the reverse() : " + courseList);
+courseList.reverse();
+console.log("After the reverse() : " + courseList);
+
+// ? sort() method
+// ! By default, the sort() function sorts values as strings. If numbers are sorted as strings, "25" is bigger than "100", because "2" is bigger than "1". Because of this, the sort() method will produce incorrect result when sorting numbers.
+
+const numArr = [1, 32, 25, 98, 700, 15, 100, 409];
+// numArr.sort();
+// console.log(numArr);
+
+// ! bu problemi çözmek için bir fonksiyon oluşturulur
+
+numArr.sort(function (a, b) {
+  if (a > b) return 1;
+  if (a < b) return -1;
+  return 0;
+});
+console.log(numArr);
