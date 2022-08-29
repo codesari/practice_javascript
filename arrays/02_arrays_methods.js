@@ -60,3 +60,31 @@ let deletedItems = colorAry.splice(2, 0, "purple", "orange");
 // bu fonskiyon normalde silinen elementleri döndürdüğü için deleted dedik,ama bu örnekte silme işlemi yok..
 console.log(colorAry);
 console.log(deletedItems);
+
+// ! Update elements using splice()
+
+let cityArr = ["istanbul", "düzce", "karabuk", "giresun"];
+console.log(cityArr);
+let deletedCity = cityArr.splice(2, 1, "zopran");
+console.log(cityArr);
+console.log(deletedCity);
+
+// ? slice()
+// !In this case, the original array is cloned. slice(start, stop);
+
+const cities = ["istanbul", "düzce", "karabuk", "giresun", "bartin"];
+console.log(cities);
+let slicedCity = cities.slice(3, 5);
+// ! slice daki 1. değer index değeri,2.değer ise kaçıncı eleman olduğu
+console.log(slicedCity);
+
+// const colors = ["Red", "Yellow", "Green", "Blue"];
+// const slicedColors = colors.slice(1, 3);
+
+// const newColors = colors.slice();
+
+// console.log(colors);
+// console.log(slicedColors);
+// console.log(newColors);
+
+// ? indexof() and lastIndexOf()
