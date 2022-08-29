@@ -35,3 +35,12 @@ let last = days_array[days_array.length - 1];
 console.log(last);
 
 console.log(days_array.length);
+
+const diziSayi = [8, 9, 10];
+const obje = { firstName: "Edward", lastName: "John", age: 30 };
+// ! Array.isArray() ve instanceof fonksiyonları kullanımı
+console.log(Array.isArray(diziSayi)); // true
+console.log(Array.isArray(first)); // false
+
+console.log(diziSayi instanceof Array); // true
+console.log(obje instanceof Array); // false
