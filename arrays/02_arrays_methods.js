@@ -31,6 +31,7 @@ courseList.reverse();
 console.log("After the reverse() : " + courseList);
 
 // ? sort() method
+
 // ! By default, the sort() function sorts values as strings. If numbers are sorted as strings, "25" is bigger than "100", because "2" is bigger than "1". Because of this, the sort() method will produce incorrect result when sorting numbers.
 
 const numArr = [1, 32, 25, 98, 700, 15, 100, 409];
@@ -45,3 +46,17 @@ numArr.sort(function (a, b) {
   return 0;
 });
 console.log(numArr);
+
+// ? splice() method
+// ! To access part of an array without modifying it, see slice().
+let deletedArr = numArr.splice(0, 4);
+console.log(deletedArr);
+console.log(numArr);
+
+// ! Insert elements using splice()
+
+let colorAry = ["red", "green", "blue"];
+let deletedItems = colorAry.splice(2, 0, "purple", "orange");
+// bu fonskiyon normalde silinen elementleri döndürdüğü için deleted dedik,ama bu örnekte silme işlemi yok..
+console.log(colorAry);
+console.log(deletedItems);
