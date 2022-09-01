@@ -88,5 +88,5 @@ console.log(shiftedElements);
 console.log(arrayPage);
 
 // ? ************ ÖZET ****************
-// ?    push() - pop()     --> diziye sondan eleman ekleme ve çıkartma
-// ? unshift() - shift()   --> dizinin başından elemanan ekleme ve çıkarma
+// ?    push() - pop()     --> diziye SONDAN eleman ekleme ve çıkartma
+// ? unshift() - shift()   --> dizinin BAŞINDAN elemanan ekleme ve çıkarma

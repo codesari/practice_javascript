@@ -18,7 +18,8 @@ const diziBol = (x) => {
 
 diziBol(arrNum1);
 
-//  ----------------------------------------------------------
+//!  ----------------------------------------------------------
+//!  ----------------------------------------------------------
 
 // yukarıdaki arrNum1 dizisinin ortalama degerini hesapla
 
@@ -45,3 +46,53 @@ calcAvrg(arrNum1);
 //* fonksiyonu yaziniz. Eger aranilan isimde bir ogrenci yok ise
 //* fonksiyon "ogrenci bulunamadi" dondurulmelidir.
 //*--------------------------------------------------------
+
+const students = ["ahmet", "mehmet", "ismet", "ahmet", "can", "mehmet", "cem"];
+
+const findStudent = (arr, searchword) => {
+  let counter = 0;
+  for (let i in arr) {
+    if (searchword === arr[i]) {
+      counter++;
+    }
+  }
+  if (!counter) {
+    // if (counter == 0)
+    return `${searchword} is not found`;
+    // tek tik kullanarak yazdırmak istiyorsan en aşağıda clg demen lazım.direk return de yazdırmak için ise returnden sonra clg kullanman lazım
+  } else {
+    return `${searchword} is founded
+   in array ${counter} times`;
+  }
+};
+
+// const key = prompt("Enter a student name,please").toLowerCase();
+
+// console.log("Searcing word is : " + key);
+// console.log(findStudent(students, key));
+
+//!  ----------------------------------------------------------
+//!  ----------------------------------------------------------
+
+//* ======================================================
+//*                   FOR-OF LOOP
+//* ======================================================
+
+//* for of dongusu, for in dongusunun bir cok veri yapisini
+//* kapsayacak sekilde guncellenmis halidir. Bu dongude dizi
+//* icersindeki veriye erisirken indisleme kullanmaya gerek yoktur.
+
+const findStudentsOf = (arr, searchWord) => {
+  let counter = 0;
+  for (let item of arr) {
+    item === searchWord ? counter++ : null;
+  }
+  return !counter
+    ? `${searchWord} can not be found`
+    : `${searchWord} is found ${counter} times`;
+};
+
+const key = prompt("Enter a student name,please").toLowerCase();
+console.log("Searcing word is : " + key);
+
+console.log(findStudentsOf(students, key));

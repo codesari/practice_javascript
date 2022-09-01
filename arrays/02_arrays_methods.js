@@ -39,6 +39,7 @@ const numArr = [1, 32, 25, 98, 700, 15, 100, 409];
 // console.log(numArr);
 
 // ! bu problemi çözmek için bir fonksiyon oluşturulur
+// ! sort fonksiyonu parametre olarak içine başka bir fonksiyon alabiliyor
 
 numArr.sort(function (a, b) {
   if (a > b) return 1;
@@ -57,6 +58,8 @@ console.log(numArr);
 
 let colorAry = ["red", "green", "blue"];
 let deletedItems = colorAry.splice(2, 0, "purple", "orange");
+// blue yu kaydırarak ekleme işlemi yapar red,green,purple,orang,blue
+// 0 ın anlama silinecek eleman yok
 // bu fonskiyon normalde silinen elementleri döndürdüğü için deleted dedik,ama bu örnekte silme işlemi yok..
 console.log(colorAry);
 console.log(deletedItems);
@@ -72,7 +75,7 @@ console.log(deletedCity);
 // ? slice()
 // !In this case, the original array is cloned. slice(start, stop);
 
-const cities = ["istanbul", "düzce", "karabuk", "giresun", "bartin"];
+const cities = ["istanbul", "düzce", "karabuk", "giresun", "bartin", "karabuk"];
 console.log(cities);
 let slicedCity = cities.slice(3, 5);
 // ! slice daki 1. değer index değeri,2.değer ise kaçıncı eleman olduğu
@@ -88,3 +91,26 @@ console.log(slicedCity);
 // console.log(newColors);
 
 // ? indexof() and lastIndexOf()
+
+console.log(cities.indexOf("karabuk"));
+console.log(cities.indexOf("giresun"));
+console.log(cities.indexOf("karabuk", 3));
+// bulamazsa -1 döndürür
+
+console.log(cities.lastIndexOf("karabuk"));
+console.log(cities.lastIndexOf("giresun"));
+console.log(cities.lastIndexOf("karabuk", 3));
+console.log(cities.lastIndexOf("karabuk", 1));
+
+// ! fill()
+
+const array3 = [1, 2, 3, 4, 5];
+array3.fill(0);
+console.log(array3);
+
+// ** includes()
+const sayilar1 = [3,5,2,"2","üc","bes",5]
+
+// ** includes() type a bakar..
+console.log(sayilar1.includes(5))
+
