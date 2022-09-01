@@ -86,13 +86,43 @@ const findStudentsOf = (arr, searchWord) => {
   let counter = 0;
   for (let item of arr) {
     item === searchWord ? counter++ : null;
+
+    //! Short-circuit yöntemi: && => kosul dogru (true) ise ifadeyi calisitir.
+    // searchWord === item && counter++;
+
+    //! Short-circuit yöntemi: || => kosul yanlis (false) ise ifadeyi çalıştır.
+    // searchWord === item || counter++;
   }
   return !counter
     ? `${searchWord} can not be found`
     : `${searchWord} is found ${counter} times`;
 };
 
-const key = prompt("Enter a student name,please").toLowerCase();
-console.log("Searcing word is : " + key);
+// const key = prompt("Enter a student name,please").toLowerCase();
+// console.log("Searcing word is : " + key);
 
-console.log(findStudentsOf(students, key));
+// console.log(findStudentsOf(students, key));
+
+//!  ----------------------------------------------------------
+//!  ----------------------------------------------------------
+//! CALLBACK FUCTİON
+
+const tek = (arr) => {
+  return arr % 2 != 0;
+};
+
+const cift = (arr) => {
+  return arr % 2 == 0;
+};
+
+const sayiSec = (arr, func) => {
+  let empty = [];
+  for (let item of arr) {
+    if (func(item)) empty.push(item);
+  }
+  return empty;
+};
+
+const sayilar = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+console.log(sayiSec(sayilar, tek));
+console.log(sayiSec(sayilar, cift));
