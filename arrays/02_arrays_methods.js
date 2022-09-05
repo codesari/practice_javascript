@@ -8,6 +8,7 @@ const new_ary = ary1.concat(ary2);
 console.log(new_ary);
 
 // ! concat ile bir değer de ekleyebiliriz
+// ! concat ekleme yapılan diziyi değiştirmiyor...
 const new_ary2 = new_ary.concat("dikkatle dinleyin!", ary1);
 console.log(new_ary2);
 
@@ -49,6 +50,7 @@ numArr.sort(function (a, b) {
 console.log(numArr);
 
 // ? splice() method
+// ! splice metodu verilen aralıktaki dizi elemanlarını siler.1.değer indistir,2.deger indisten itibaren kaç değer silineceğidir
 // ! To access part of an array without modifying it, see slice().
 let deletedArr = numArr.splice(0, 4);
 console.log(deletedArr);
@@ -59,7 +61,7 @@ console.log(numArr);
 let colorAry = ["red", "green", "blue"];
 let deletedItems = colorAry.splice(2, 0, "purple", "orange");
 // blue yu kaydırarak ekleme işlemi yapar red,green,purple,orang,blue
-// 0 ın anlama silinecek eleman yok
+// 0 ın anlamı silinecek eleman yok
 // bu fonskiyon normalde silinen elementleri döndürdüğü için deleted dedik,ama bu örnekte silme işlemi yok..
 console.log(colorAry);
 console.log(deletedItems);
@@ -109,8 +111,7 @@ array3.fill(0);
 console.log(array3);
 
 // ** includes()
-const sayilar1 = [3,5,2,"2","üc","bes",5]
+const sayilar1 = [3, 5, 2, "2", "üc", "bes", 5];
 
 // ** includes() type a bakar..
-console.log(sayilar1.includes(5))
-
+console.log(sayilar1.includes(5));
