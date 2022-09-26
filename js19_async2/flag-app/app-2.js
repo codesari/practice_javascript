@@ -1,5 +1,5 @@
 const getCountryInfo = async (name) => {
-  const url = `https://restcountries.com/v3.1/name/names`;
+  const url = `https://restcountries.com/v3.1/name/${name}`;
 
   try {
     const res = await fetch(url);
@@ -8,8 +8,9 @@ const getCountryInfo = async (name) => {
       printError(`Something went wrong.Error code ${res.status}`);
       throw new Error();
     }
-    const data = res.json();
-    console.log(data);
+    const data = await res.json();
+    // console.log(data);
+    printData(data);
   } catch (error) {
     console.log(error);
   }
@@ -21,5 +22,20 @@ printError = (msg) => {
 
   countriesDiv.innerHTML += `<h2>${errorMessage} </h2>
     <img src="./img/404.png" alt="" />`;
+};
+printData = (data) => {
+  console.log(data);
+  const {
+    capital,
+    currencies,
+    flag: { svg },
+    languages,
+    name: { common },
+  } = data[0];
+  //* objelerin keys veya value lerini çekmek için..
+  console.log(Object.values(languages));
+  //   console.log(Object.keys(languages));
+
+  //* örnek ulasma kodu -->   console.log(Object.values(data[0].currencies.TRY.symbol));
 };
 getCountryInfo("turkey");
