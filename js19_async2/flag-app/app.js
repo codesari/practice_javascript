@@ -1,7 +1,3 @@
-//*=========================================================
-//*                     FLAG-APP
-//*=========================================================
-
 const fetchCountryByName = (name) => {
   const url = `https://restcountries.com/v3.1/name/${name}`;
   fetch(url)

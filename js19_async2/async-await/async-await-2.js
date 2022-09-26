@@ -1,7 +1,7 @@
 let isError = false;
 
 getTechNews = async () => {
-  const apiKey = "6cefe118ac8c443ba227b92f540b086d";
+  const apiKey = "6cefe118ac8c443ba227b92f540b086dx";
   //   const country
   //   const category
   const url = `https://newsapi.org/v2/top-headlines?country=tr&category=technology&apiKey=${apiKey}`;
@@ -13,8 +13,9 @@ getTechNews = async () => {
     if (!res.ok) {
       isError = true;
       //* throw new Error,hatayı consola yazdırır.biz kullanıcıya bilgi vermek için DOM'a basmak istiyoruz
-      //   throw new Error(`Something went wrong.Error Code --> ${res.status}`);
-      //* burada bir hata fırlattıgimizda program direk catch'e gidecektir.bu yüzden asagidaki dom'a basma fonksiyonu calismayacak ve ekrana bilgi veremeyecegiz bu yüzden hata fırlatma kodunu siliyoruz onun yerine kullanıcıya viz bilgi veriyoruz
+
+      // throw new Error(`Something went wrong.Error Code --> ${res.status}`);
+      //* burada bir hata fırlattıgimizda program direk catch'e gidecektir.bu yüzden asagidaki dom'a basma fonksiyonu calismayacak ve ekrana bilgi veremeyecegiz bu yüzden hata fırlatma kodunu siliyoruz onun yerine kullanıcıya biz bilgi veriyoruz.ya da 2. yöntem json ve printToDOM() 'u throw new error un üstüne yerlestireceğiz..
     }
     const data = await res.json();
     //! eger await yazmazsak verinin gelmesini beklemeden asagi gecebilir ve veriler null gözükebilir
