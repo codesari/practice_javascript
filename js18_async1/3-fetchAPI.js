@@ -7,10 +7,11 @@
 //   .catch((err) => console.log(err));
 //
 // ! fetch,optimist bir yapı.cevap geldigi müddetce kendini basarılı sayıyor,kendine yanlızca response gelmezse basarisiz sayıyor.hatalar bu yüzden catch e girmiyor 401 vs...hatayı catch'de göstermek için gelen responsa üzerinden status durumunu kontrol ettiriyoruz.ok degiskeni true ve false degeri alır.true ise baglanti basarili olmustur,false ise basarisiz
+
 // * url sonu : users -->true
 fetch("https://api.github.com/users")
   .then((res) => {
-    console.log(res);
+    // console.log(res);
     // * Error Handling
     if (!res.ok) {
       throw Error("Something went wrong");
@@ -20,8 +21,19 @@ fetch("https://api.github.com/users")
       //? res.json() --> data
     }
   })
-  .then((data) => console.log(data))
+  //
+  .then((data) => extractData(data))
   .catch((err) => console.log(err));
+
+extractData = (data) => {
+  const usersDiv = document.querySelector(".users");
+  console.log(data);
+  data.forEach((item) => {
+    const { login, avatar_url } = item;
+    usersDiv.innerHTML += `<h2>${login}</h2>
+    <img src="${avatar_url}" width="300px" >`;
+  });
+};
 
 //! fetch,asenkron bir yapı,res.json() ile okudugumuz verileri fetch dısında göstermek istediğimiz zaman ve bu yapı senkron olacağından verileri göremiyoruz.çünkü önce senkron islem calisiyor daha sonra fetch den veriler geliyor dolayısıyla görmek istediğimiz veriyi göremiyoruz
 
