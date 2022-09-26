@@ -1,6 +1,6 @@
 const myPromise = new Promise((resolve, reject) => {
   resolve("Data fetched");
-  reject("Data is helted");
+  reject("Fetch helted");
 });
 myPromise.then((res) => console.log(res));
 
@@ -22,13 +22,13 @@ myPromise.then((res) => console.log(res));
 //   .catch((err) => console.log(err));
 // // myPromise.then((res) => console.log(res)).then().then().then().catch()
 
-const newPromise = new Promise((resolve, reject) => {
-  const randomNumber = Math.floor(Math.random() * 200);
-  if (randomNumber % 2 == 0) {
-    console.log("Cift sayi bulundu");
-    resolve(randomNumber);
-  } else {
-    reject(new Error("Cift sayi yok"));
-  }
-});
-newPromise.then((res) => console.log(res)).catch((err) => console.log(err));
+// const newPromise = new Promise((resolve, reject) => {
+//   const randomNumber = Math.floor(Math.random() * 200);
+//   if (randomNumber % 2 == 0) {
+//     console.log("Cift sayi bulundu");
+//     resolve(randomNumber);
+//   } else {
+//     reject(new Error("Cift sayi yok"));
+//   }
+// });
+// newPromise.then((res) => console.log(res)).catch((err) => console.log(err));

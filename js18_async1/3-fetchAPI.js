@@ -12,14 +12,12 @@
 
 console.log("FETCH");
 
-// https://api.github.com/users
-
 fetch("https://api.github.com/user")
-//   .then((response) => response.json())
+  //? aksi belirtilmedikçe burası GET metoduduriGET harici bir kullanım icin method:POST diye belirtmek gerekir
+
   .then((response) => {
-    
-    response.json())
-  }
+    response.json();
+  })
   .then((data) => console.log(data))
   .catch(() => console.log("Something went wrong"));
 //   .catch((err) => console.log(err));
