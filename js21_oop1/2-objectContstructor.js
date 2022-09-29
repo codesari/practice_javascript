@@ -9,3 +9,15 @@
 //* Ornegin Date ve Array nesneleri Object.prototype'dan miras almaktadir.
 
 //? Object Constructor
+// ! Book aslında bir kalıp gibi..Asagida bu kalıptan istedigimiz gibi türetiyoruz
+function Book(title, author, year) {
+  this.title = title;
+  this.author = author;
+  this.year = year;
+  getSummary = function () {
+    return ` ${this.title} was written by ${this.author} in ${this.year}`;
+  };
+}
+//? instance
+const book1 = new Book("Kasagi", "Omer Seyfettin", 1920);
+const book2 = new Book("Sinekli Bakkal", "H.Edip Adivar", 1920);
