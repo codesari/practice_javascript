@@ -32,10 +32,17 @@ printData = (data) => {
     languages,
     name: { common },
   } = data[0];
-  //* objelerin keys veya value lerini çekmek için..
-  console.log(Object.values(languages));
-  //   console.log(Object.keys(languages));
+  //* objelerin keys veya value vey hepsini (entries) lerini çekmek için..
+  //   console.log(currencies);
+  //   console.log(Object.entries(currencies));
+  //   console.log(Object.values(currencies));
+  //   console.log(Object.keys(currencies));
 
-  //* örnek ulasma kodu -->   console.log(Object.values(data[0].currencies.TRY.symbol));
+  console.log(Object.values(currencies)[0].name);
+
+  //* örnek ulasma kodu (hard coded) -->   console.log(Object.values(data[0].currencies.TRY.symbol));
 };
 getCountryInfo("turkey");
+
+// ! ÖDEV : ülke isimlerini apiden çek döngü ile selectin option value göm
+// ! seçili ülke değişeceği zaman addEvenListener("change") ile ya da onchange metodu kullan
