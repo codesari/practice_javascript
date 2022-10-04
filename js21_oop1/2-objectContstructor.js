@@ -8,26 +8,6 @@
 //* Object prototipi, prototip miras zincirinin en tepesinde yer almaktadir.
 //* Ornegin Date ve Array nesneleri Object.prototype'dan miras almaktadir.
 
-// //* INHERİTANCE
-
-// //? Sub-class
-
-// function Magazine(title, author, year, month) {
-//   Book.call(this, title, author, year);
-//   //? Book objesini cagiriyoruz.Book objesindeki ortak degerleri bir daha yazmamak icin
-//   this.month = month;
-//   //*? burada da ekstra özellik vermek isterken yazıyoruz.Person-Hasta-Hemsire-Doktor arasindaki iliski gibi.Hepsinde ortak özellikler var ama farklı özelliklerini biz üretiyoruz.Benzerleri birbirinden türetebiliriz.
-// }
-// // ! prototype lari miras almak icin Object.create() metodu kullanılabilir.
-// Magazine.prototype = Object.create(Book.prototype);
-
-// const mag1 = new Magazine("Scientific Research", "Einstein", 1926, "Sep");
-// console.table(mag1);
-// // ! prototype lar dogrudan miras olarak gelmiyor
-// console.log(mag1.getSummary());
-// console.log(mag1.getAge());
-// console.log(mag1.price);
-
 // //? Object Constructor
 // ! Person aslında bir kalıp gibi..Asagida bu kalıptan istedigimiz gibi türetiyoruz
 // * kalıp ve para basma ilişkisi gibi..
@@ -82,6 +62,22 @@ console.log(person1.__proto__);
 // ! disaridan,objeye degisken,metod,fonksiyon atayabiliriz..
 Person.prototype.graduadeStatus = true;
 
-// Book.prototype.price = 100;
-// console.log(Book.prototype); //*prototype a objedendan bakma
-// console.log(book1.__proto__); //* prototype a instance dan bakma
+// //* INHERİTANCE
+
+// //? Sub-class
+
+// function Magazine(title, author, year, month) {
+//   Book.call(this, title, author, year);
+//   //? Book objesini cagiriyoruz.Book objesindeki ortak degerleri bir daha yazmamak icin
+//   this.month = month;
+//   //*? burada da ekstra özellik vermek isterken yazıyoruz.Person-Hasta-Hemsire-Doktor arasindaki iliski gibi.Hepsinde ortak özellikler var ama farklı özelliklerini biz üretiyoruz.Benzerleri birbirinden türetebiliriz.
+// }
+// // ! prototype lari miras almak icin Object.create() metodu kullanılabilir.
+// Magazine.prototype = Object.create(Book.prototype);
+
+// const mag1 = new Magazine("Scientific Research", "Einstein", 1926, "Sep");
+// console.table(mag1);
+// // ! prototype lar dogrudan miras olarak gelmiyor
+// console.log(mag1.getSummary());
+// console.log(mag1.getAge());
+// console.log(mag1.price);
