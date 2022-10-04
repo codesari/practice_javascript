@@ -66,6 +66,12 @@ Person.prototype.graduadeStatus = true;
 
 // //? Sub-class
 
+function Patient(name, birthday, location, status) {
+  Person.call(this, name, birthday, location);
+  //! Patient kalıbı ile yeni instance oluşturduk.Ortak olan keysleri Book kalıbından cagirdik,tekrardan yazmak yerine.
+  this.status = status;
+}
+
 // function Magazine(title, author, year, month) {
 //   Book.call(this, title, author, year);
 //   //? Book objesini cagiriyoruz.Book objesindeki ortak degerleri bir daha yazmamak icin
