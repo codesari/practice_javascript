@@ -12,43 +12,6 @@
 // //? Bir parent class'in degisken ve fonksiyonelliği extends
 // //? keyword'u ile child class'a gecmektedir.(INHERITANCE)
 
-// class Book {
-//   constructor(title, author, year) {
-//     this.author = author;
-//     this.title = title;
-//     this.year = year;
-
-//     //? Bu alanda yazilan bir metot butun instance'ların belleginde tek tek yer kaplar.
-//     this.getTitle = function () {
-//       return this.title;
-//     };
-//   }
-
-//   //! Bu kisimda yazilan fonksiyonlar aslinda prototype alaninda bulunur.
-//   getAge() {
-//     return new Date().getFullYear() - this.year;
-//   }
-//   getSummary() {
-//     return `${this.title} was writtten by ${this.author} in ${this.year}`;
-//   }
-// }
-
-// //?instance
-// const book1 = new Book("Kasagi", "Omer Seyfettin", 1920);
-// console.log(book1);
-// console.log(book1.getAge());
-// console.log(book1.getSummary());
-
-// //? Sub-Class tanimlamasi (Inheritance)
-
-// class Magazine extends Book {
-//   constructor(title, author, year, month) {
-//     //! Book'un constructor'i cagrildi
-//     super(title, author, year); //! Book'un prototpye kopyalnmis
-//     this.month = month;
-//   }
-// }
-
 // //? Magazine objesinin yeni bir instance
 // const mag1 = new Magazine("Scientific Research", "Einstein", 1926, "Sep");
 // console.log(mag1);
@@ -76,8 +39,10 @@ console.log(book1.getSummary());
 console.log(book2.getSummary());
 
 class Magazine extends Book {
-  constructor(title, author, year) {
+  constructor(title, author, year, month) {
     super(title, author, year);
     //? ES5 yönteminde call ile yaptigimizi burada super ile yapiyoruz ve bu kullanımda prototype lar da default olarak gelmis oluyor,biz ekstra prototypelar ile ugrasmiyoruz..
+    this.month = month;
   }
 }
+const mag1 = new Magazine("CHIP", "Koffman", 1995, "3 aylik");
