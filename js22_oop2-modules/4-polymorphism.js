@@ -2,6 +2,8 @@
 //*        OOP -  Polymorphism(ES6)
 //* ======================================================
 
+// ! OVERRİDİND - OVERLOADİNG
+
 //* Polymorphism, bir degisken, fonksiyon veya nesnenin çoklu sekiller
 //* alabilmesini tanimlayan bir nesne-yonelimli programlama teknigidir.
 //* Polymorphism, genellikle Overloading ve Overriding gibi alt kavramlar
@@ -52,6 +54,7 @@
 // console.log(mag1.getSummary());
 // console.log(mag1.getSummaryParent());
 
+//************************************************************************ */
 class Book {
   constructor(title, author, year) {
     this.title = title;

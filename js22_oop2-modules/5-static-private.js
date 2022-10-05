@@ -40,9 +40,16 @@ class Book {
     //? fonk. yazarak kontrollü okuma yaptık fakat burada herhangi bir complex ifade yazmadım.Disaridan erişmek isteyenlerin özelliklerinin sorgulayacak birşeyler yazabiliriz buraya..Ta ki her isteyen id yi okuyamasın,sınırlanma olsun..
 
     return this.#id;
+    //? private olan bir degiskeni fonk() ile genel yaptık
+  }
+  setId(id) {
+    return (this.#id = id);
+    // ? burada return demezsek getId fonk() ile cagirabiliriz
   }
 }
 
 const book1 = new Book("Steve Jobs", "Walter Isaccson", 2011);
 // console.log(book1.#id);
 console.log(book1.getId());
+
+console.log(book1.setId("0007777"));
