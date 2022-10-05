@@ -43,8 +43,16 @@ class Book {
     //? private olan bir degiskeni fonk() ile genel yaptık
   }
   setId(id) {
-    return (this.#id = id);
+    this.#id = id;
     // ? burada return demezsek getId fonk() ile cagirabiliriz
+  }
+  //! private metod tanimladik
+  #computeAge() {
+    return new Date().getFullYear() - this.year;
+  }
+  //! private metoda ulaşmak icin bir fonk() yazdik.
+  accessAge() {
+    return this.#computeAge();
   }
 }
 
@@ -52,4 +60,6 @@ const book1 = new Book("Steve Jobs", "Walter Isaccson", 2011);
 // console.log(book1.#id);
 console.log(book1.getId());
 
-console.log(book1.setId("0007777"));
+book1.setId("0007777");
+console.log(book1.getId());
+console.log(book1.accessAge());
