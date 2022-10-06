@@ -52,4 +52,12 @@ const moduleName = "Module 1";
 export default (num) => num * num;
 
 //* export etmek istediklerimi yani paylaşmak istediklerimi belirtiyorum
-export { WORKING_HOURS_WEEK };
+export {
+  WORKING_HOURS_WEEK,
+  WORKING_HOURS_WEEK as WHW,
+  add as sum,
+  inc,
+  dec,
+  counter,
+};
+console.log("module 1 is loaded");

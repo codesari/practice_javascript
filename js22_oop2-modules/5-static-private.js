@@ -25,6 +25,8 @@
 //! Private metotlara ancak class icerisindeki diger metotlar ile erisilebilir.
 
 class Book {
+  //* classlar arası islem yapmak(instancelar'dan bagimsiz) icin static degisken tercih edilir.
+  static counter = 0;
   // * private variable
   #id = "1234567";
   constructor(title, author, year) {
@@ -34,6 +36,7 @@ class Book {
     this.getTitle = function () {
       return this.title;
     };
+    Book.counter++;
   }
   //   * private id'ye erişmek icin class icinde bir public fonk.yazdik(constructor'un disinda)
   getId() {
@@ -54,12 +57,21 @@ class Book {
   accessAge() {
     return this.#computeAge();
   }
+  static diffAge(b1, b2) {
+    return b1.year - b2.year;
+  }
 }
 
-const book1 = new Book("Steve Jobs", "Walter Isaccson", 2011);
+const book1 = new Book("Steve Jobs", "Walter Isaccson", 2071);
 // console.log(book1.#id);
 console.log(book1.getId());
 
 book1.setId("0007777");
 console.log(book1.getId());
 console.log(book1.accessAge());
+
+const book2 = new Book("Steve Jobs", "Walter Isaccson", 2011);
+const book3 = new Book("Steve Jobs", "Walter Isaccson", 2011);
+// const book4 = new Book("Steve Jobs", "Walter Isaccson", 2011);
+console.log(Book.counter);
+console.log(Book.diffAge(book1, book2));
